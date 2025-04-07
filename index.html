@@ -148,7 +148,7 @@
     
 
          <div id="texto">
-            
+        <button id="cerrarTexto" style="position: absolute; top: 8px; right: 12px; background: none; border: none; font-size: 18px; cursor: pointer;">✕</button>  
             <center><a href="http://mapas.municoquimbo.cl/" target="blank"> <img src="images/logo.png"></a></center>       <strong><font size="3">Evacuación Tsunami</font><br>Ilustre Municipalidad de Coquimbo<br><br>
                     
       </div>
@@ -499,6 +499,16 @@
         map.on("layerremove", function(){
             resetLabels([layer_PuntodeEncuentro_6]);
         });
+        document.getElementById("cerrarTexto").addEventListener("click", function () {
+          var textoDiv = document.getElementById("texto");
+          textoDiv.style.animation = "fadeOutUp 0.8s ease forwards";
+          setTimeout(function () {
+            textoDiv.style.display = "none";
+          }, 800);
+        });
+
+
         </script>
     </body>
 </html>
+
